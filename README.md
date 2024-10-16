@@ -22,11 +22,13 @@ def hash_document(document_path):
         document_hash = hashlib.sha256(document).hexdigest()
     return document_hash
 
-Smart Contracts in Remix IDE
-The smart contract is set up in Remix IDE to facilitate the insertion of document hashes onto the blockchain. The contract's primary function is to verify and store document hashes securely.
 # Example usage
 hash_value = hash_document("path_to_your_document.pdf")
 print("Document Hash:", hash_value)
+
+Smart Contracts in Remix IDE
+The smart contract is set up in Remix IDE to facilitate the insertion of document hashes onto the blockchain. The contract's primary function is to verify and store document hashes securely.
+
 pragma solidity ^0.8.0;
 
 contract DocumentStorage {
@@ -40,8 +42,7 @@ contract DocumentStorage {
     function verifyDocument(string memory documentHash) public view returns (bool) {
         return documents[documentHash];
     }
-Interaction with MetaMask
-MetaMask acts as a bridge to interact with the Ethereum blockchain. It allows users to manage their identities and sign transactions.
+
 
 Document Upload Process
 To upload the document hash to the blockchain, the user interacts with the smart contract through MetaMask, confirming the transaction that inserts the document hash.
